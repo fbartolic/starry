@@ -48,7 +48,7 @@ if debug:
 # Numerical override at high l?
 if bool(int(os.getenv("STARRY_KL_NUMERICAL", 0))):
     macros["STARRY_KL_NUMERICAL"] = 1
-    
+
 # Compute the Oren-Nayar (1994) expansion if the user requests it
 deg = os.getenv("STARRY_OREN_NAYAR_DEG", None)
 Nb = os.getenv("STARRY_OREN_NAYAR_NB", None)
@@ -183,6 +183,7 @@ class BuildExt(build_ext):
             if has_flag(self.compiler, "-fvisibility=hidden"):
                 opts.append("-fvisibility=hidden")
             extra_args += ["-g0"]
+        extra_args += ["-Wno-missing-braces"]
         for ext in self.extensions:
             ext.extra_compile_args = opts + extra_args
             ext.extra_link_args = link_opts + extra_args

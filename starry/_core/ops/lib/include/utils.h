@@ -20,6 +20,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unsupported/Eigen/AutoDiff>
+#include <unsupported/Eigen/CXX11/Tensor>
 #include <vector>
 
 //! Number of digits (16 = double)

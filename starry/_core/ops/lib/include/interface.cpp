@@ -11,6 +11,7 @@
 
 // Includes
 #include "basis.h"
+#include "gp/wigner.h"
 #include "ops.h"
 #include "reflected/scatter.h"
 #include "sturm.h"
@@ -38,6 +39,14 @@ PYBIND11_MODULE(_c_ops, m) {
 
   // Declare the Ops class
   py::class_<starry::Ops<Scalar>> Ops(m, "Ops");
+
+  // DEBUG
+  // GP TEST
+  m.def("gp", [](const int ydeg) {
+
+    starry::gp::wigner::Wigner<Scalar> W(ydeg);
+
+  });
 
   // Constructor
   Ops.def(py::init<int, int, int, Scalar, Scalar>());
