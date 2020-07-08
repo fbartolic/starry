@@ -57,6 +57,7 @@ protected:
   // Product of two basis vectors.
   inline RowVector<Scalar> prod(const RowVector<Scalar> &x1,
                                 const RowVector<Scalar> &x2) {
+
     int l1 = (x1.size() - 1) / 2;
     int l2 = (x2.size() - 1) / 2;
     int l = l1 + l2;
