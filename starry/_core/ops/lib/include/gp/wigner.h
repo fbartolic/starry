@@ -266,25 +266,36 @@ protected:
   }
 
 public:
+  /*
+    Return the second moment matrix `Rz * S * Rz^T`.
+
+  */
   inline Matrix<Scalar, RowMajor> RzMom2(const Matrix<Scalar> &S) {
     Matrix<Scalar, RowMajor> M(Ny * Ny, 4 * ydeg + 1);
+    M.setZero();
     for (int l1 = 0; l1 < ydeg + 1; ++l1) {
+      int I = 2 * l1 + 1;
+      int l1_2 = l1 * l1;
       for (int l2 = 0; l2 < l1 + 1; ++l2) {
-
-        int I = 2 * l1 + 1;
         int J = 2 * l2 + 1;
-        auto Sij = S.block(l1 * l1, l2 * l2, I, J);
+        int K = 2 * (l1 + l2) + 1;
+        int l2_2 = l2 * l2;
 
-        // RowMatrixMap Rzil(Rzi.at(l1).data(), I * I, I);
-        Matrix<Scalar, RowMajor> RziS = Rzi.at(l1) * Sij;
+        // R . S
+        auto Sij = S.block(l1_2, l2_2, I, J);
+        Matrix<Scalar, RowMajor> tmp = (Rzi.at(l1) * Sij).transpose();
+        RowMatrixMap RziS(tmp.data(), J * I, I);
 
-        std::cout << RziS << std::endl;
-
-        /* TODO
-        auto x = RziS.data();
-        std::vector<Scalar> m(x, x + I * I * J);
-        auto foo = matprod(m, Rzj.at(l2), 2 * l1 + 1, 2 * l2 + 1);
-        */
+        // (R . S) . R^T
+        for (int ii = 0; ii < I; ++ii) {
+          for (int jj = 0; jj < J; ++jj) {
+            for (int kk = 0; kk < J; ++kk) {
+              int ij = Ny * (l1_2 + ii) + l2_2 + jj;
+              M.row(ij).segment(0, K) += prod(RziS.col(ii).segment(I * kk, I),
+                                              Rzj[l2].row(J * jj + kk));
+            }
+          }
+        }
       }
     }
     return M;
@@ -330,23 +341,8 @@ public:
       Rzi.at(l) = Rzil;
 
       // Right operator
-      Rzj.at(l).resize(I * I, I);
-      for (int k = 0; k < I; ++k) {
-        // TODO: Avoid the copy, use strides in the call to `RowMatrixMap`
-        Vector<Scalar> Rk = R.at(l).col(k);
-        RowMatrixMap Rkk(Rk.data(), I, I);
-        Rzj.at(l).block(I * k, 0, I, I) = Rkk.transpose();
-      }
+      Rzj.at(l) = R.at(l);
     }
-
-    // DEBUG
-    Matrix<Scalar> S(Ny, Ny);
-    S << 1, 2, 0, 7, 4, 0, 3, 0, -1, 0, 0, 0, -8, 0, 0, 5, -1, 0, -2, 0, 1, 0,
-        0, 0, -1, 0, 2, -6, 0, 5, 1, 0, -7, 0, 5, 0, 4, 0, 3, 0, 2, -2, 0, -7,
-        4, 0, 0, 2, -1, 0, 1, 0, 4, 0, 6, 0, -1, 0, -4, 0, 1, 3, 1, 0, -5, -3,
-        3, 3, 0, 8, 1, 10, 9, 0, 5, 0, 2, 0, 1, 0, 2;
-
-    RzMom2(S);
   }
 };
 

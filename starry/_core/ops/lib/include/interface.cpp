@@ -42,10 +42,9 @@ PYBIND11_MODULE(_c_ops, m) {
 
   // DEBUG
   // GP TEST
-  m.def("gp", [](const int ydeg) {
-
+  m.def("gp", [](const int ydeg, const Matrix<Scalar> &S) {
     starry::gp::wigner::Wigner<Scalar> W(ydeg);
-
+    return W.RzMom2(S);
   });
 
   // Constructor
