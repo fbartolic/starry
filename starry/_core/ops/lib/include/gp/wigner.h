@@ -96,7 +96,7 @@ protected:
     for (m = isup; m > iinf - 1; --m) {
       // Multiplication by s/c
       D.at(l).row(2 * l * (2 * l + 1) + m + l) =
-          shift_left(-sqrt(Scalar(l + m + 1) / (l - m)) *
+          shift_left(-sqrt(Scalar(l + m + 1) / Scalar(l - m)) *
                      D.at(l).row(2 * l * (2 * l + 1) + l + m + 1));
     }
 
@@ -105,7 +105,7 @@ protected:
     for (mp = l - 1; mp > -1; --mp) {
       laux = l + mp;
       lbux = l - mp;
-      aux = 1.0 / sqrt(Scalar(l - 1) * Scalar(laux * lbux));
+      aux = 1.0 / (Scalar(l - 1) * sqrt(Scalar(laux * lbux)));
       cux = sqrt(Scalar((laux - 1) * (lbux - 1))) * l;
       for (m = isup; m > iinf - 1; --m) {
         lauz = l + m;
@@ -242,29 +242,6 @@ protected:
     return;
   }
 
-  // Product of two basis matrices.
-  inline std::vector<Scalar> matprod(const std::vector<Scalar> &x1,
-                                     const std::vector<Scalar> &x2, const int I,
-                                     const int J) {
-    // Dimensions
-    int K = I + J - 1;
-    std::vector<Scalar> p(I * J * K);
-    std::fill(p.begin(), p.end(), 0.0);
-    for (int m = 0; m < I; ++m) {
-      for (int n = 0; n < J; ++n) {
-        for (int i = 0; i < I; ++i) {
-          for (int j = 0; j < J; ++j) {
-            for (int k = 0; k < J; ++k) {
-              p.at(J * K * i + K * j + m + n) +=
-                  x1.at(I * J * m + J * i + k) * x2.at(J * J * n + J * k + j);
-            }
-          }
-        }
-      }
-    }
-    return p;
-  }
-
 public:
   /*
     Return the second moment matrix `Rz * S * Rz^T`.
@@ -298,6 +275,7 @@ public:
         }
       }
     }
+
     return M;
   }
 
