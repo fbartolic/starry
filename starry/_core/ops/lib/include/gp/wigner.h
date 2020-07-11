@@ -7,8 +7,7 @@
 #ifndef _STARRY_GP_WIGNER_H_
 #define _STARRY_GP_WIGNER_H_
 
-#include "basis.h"
-#include "utils.h"
+#include "../utils.h"
 
 namespace starry {
 namespace gp {
@@ -20,7 +19,7 @@ using namespace utils;
 Rotation matrix class for the spherical harmonics.
 
 */
-template <class Scalar> class Wigner {
+template <class Scalar, int Axis> class Wigner {
 protected:
   using RowMatrixMap = Eigen::Map<Matrix<Scalar, RowMajor>>;
 
@@ -29,13 +28,9 @@ protected:
   const int Ny;   /**< Number of spherical harmonic `(l, m)` coefficients */
 
   // Matrices
-  std::vector<Matrix<Scalar, RowMajor>> D; /**< The complex Wigner matrix */
-  std::vector<Matrix<Scalar, RowMajor>> R; /**< The real Wigner matrix */
-
-  std::vector<Matrix<Scalar, RowMajor>> Rzi;
-  std::vector<Matrix<Scalar, RowMajor>> Rzj;
-  std::vector<Matrix<Scalar, RowMajor>> Rxi;
-  std::vector<Matrix<Scalar, RowMajor>> Rxj;
+  std::vector<Matrix<Scalar, RowMajor>> DT; /**< The complex Wigner matrix */
+  std::vector<Matrix<Scalar, RowMajor>> RT; /**< The real Wigner matrix */
+  std::vector<Matrix<Scalar, RowMajor>> R;
 
   // Basis terms
   RowVector<Scalar> b001, b010, b100, bXXX, b10201;
@@ -90,15 +85,15 @@ protected:
 
     // Compute the D[l;m',m) matrix.
     // First row by recurrence (Eq. 19 and 20 in Alvarez Collado et al.)
-    D.at(l).row(4 * l * (l + 1)) =
-        prod(D.at(l - 1).row(2 * l * (isup + l - 1)), b001);
-    D.at(l).row(2 * l * (2 * l + 1)) = prod(
-        D.at(l - 1).row((2 * l - 1) * (isup + l - 1) - isup + l - 1), b100);
+    DT.at(l).row(4 * l * (l + 1)) =
+        prod(DT.at(l - 1).row(2 * l * (isup + l - 1)), b001);
+    DT.at(l).row(2 * l * (2 * l + 1)) = prod(
+        DT.at(l - 1).row((2 * l - 1) * (isup + l - 1) - isup + l - 1), b100);
     for (m = isup; m > iinf - 1; --m) {
       // Multiplication by s/c
-      D.at(l).row(2 * l * (2 * l + 1) + m + l) =
+      DT.at(l).row(2 * l * (2 * l + 1) + m + l) =
           shift_left(-sqrt(Scalar(l + m + 1) / Scalar(l - m)) *
-                     D.at(l).row(2 * l * (2 * l + 1) + l + m + 1));
+                     DT.at(l).row(2 * l * (2 * l + 1) + l + m + 1));
     }
 
     // The rows of the upper quarter triangle of the D[l;m',m) matrix
@@ -116,15 +111,15 @@ protected:
         a = l * (l - 1);
         b = -(m * mp) / a;
         bXXX << b - 1, 0, b + 1;
-        D.at(l).row((2 * l + 1) * (mp + l) + m + l) =
+        DT.at(l).row((2 * l + 1) * (mp + l) + m + l) =
             prod(fact * (2 * l - 1) * a *
-                     D.at(l - 1).row((2 * l - 1) * (mp + l - 1) + m + l - 1),
+                     DT.at(l - 1).row((2 * l - 1) * (mp + l - 1) + m + l - 1),
                  bXXX);
         if ((lbuz != 1) && (lbux != 1)) {
           cuz = sqrt(Scalar((lauz - 1) * (lbuz - 1)));
-          D.at(l).row((2 * l + 1) * (mp + l) + m + l) -=
+          DT.at(l).row((2 * l + 1) * (mp + l) + m + l) -=
               (fact * cux * cuz) *
-              prod(D.at(l - 2).row((2 * l - 3) * (mp + l - 2) + m + l - 2),
+              prod(DT.at(l - 2).row((2 * l - 3) * (mp + l - 2) + m + l - 2),
                    b10201);
         }
       }
@@ -143,8 +138,8 @@ protected:
     isup = l - 1;
     for (m = l; m > 0; --m) {
       for (mp = iinf; mp < isup + 1; ++mp) {
-        D.at(l).row((2 * l + 1) * (mp + l) + m + l) =
-            sign * D.at(l).row((2 * l + 1) * (m + l) + mp + l);
+        DT.at(l).row((2 * l + 1) * (mp + l) + m + l) =
+            sign * DT.at(l).row((2 * l + 1) * (m + l) + mp + l);
         sign *= -1;
       }
       ++iinf;
@@ -157,38 +152,41 @@ protected:
     for (m = l - 1; m > -(l + 1); --m) {
       sign = -1;
       for (mp = isup; mp > iinf - 1; --mp) {
-        D.at(l).row((2 * l + 1) * (mp + l) + m + l) =
-            sign * D.at(l).row((2 * l + 1) * (-mp + l) - m + l);
+        DT.at(l).row((2 * l + 1) * (mp + l) + m + l) =
+            sign * DT.at(l).row((2 * l + 1) * (-mp + l) - m + l);
         sign *= -1;
       }
       ++isup;
     }
 
     // Compute the real rotation matrices R from the complex ones D
-    R.at(l).row((2 * l + 1) * l + l) = D.at(l).row((2 * l + 1) * l + l);
+    RT.at(l).row((2 * l + 1) * l + l) = DT.at(l).row((2 * l + 1) * l + l);
     cosmal = c1;
     sinmal = s1;
     sign = -1;
     for (mp = 1; mp < l + 1; ++mp) {
       cosmga = c3;
       sinmga = s3;
-      vaux = root_two * D.at(l).row((2 * l + 1) * l + mp + l);
-      R.at(l).row((2 * l + 1) * (mp + l) + l) = vaux * cosmal;
-      R.at(l).row((2 * l + 1) * (-mp + l) + l) = vaux * sinmal;
+      vaux = root_two * DT.at(l).row((2 * l + 1) * l + mp + l);
+      RT.at(l).row((2 * l + 1) * (mp + l) + l) = vaux * cosmal;
+      RT.at(l).row((2 * l + 1) * (-mp + l) + l) = vaux * sinmal;
       for (m = 1; m < l + 1; ++m) {
-        vaux = root_two * D.at(l).row((2 * l + 1) * (m + l) + l);
-        R.at(l).row((2 * l + 1) * l + m + l) = vaux * cosmga;
-        R.at(l).row((2 * l + 1) * l - m + l) = -vaux * sinmga;
-        d1 = D.at(l).row((2 * l + 1) * (-mp + l) - m + l);
-        d2 = sign * D.at(l).row((2 * l + 1) * (mp + l) - m + l);
+        vaux = root_two * DT.at(l).row((2 * l + 1) * (m + l) + l);
+        RT.at(l).row((2 * l + 1) * l + m + l) = vaux * cosmga;
+        RT.at(l).row((2 * l + 1) * l - m + l) = -vaux * sinmga;
+        d1 = DT.at(l).row((2 * l + 1) * (-mp + l) - m + l);
+        d2 = sign * DT.at(l).row((2 * l + 1) * (mp + l) - m + l);
         cosag = cosmal * cosmga - sinmal * sinmga;
         cosagm = cosmal * cosmga + sinmal * sinmga;
         sinag = sinmal * cosmga + cosmal * sinmga;
         sinagm = sinmal * cosmga - cosmal * sinmga;
-        R.at(l).row((2 * l + 1) * (mp + l) + m + l) = d1 * cosag + d2 * cosagm;
-        R.at(l).row((2 * l + 1) * (mp + l) - m + l) = -d1 * sinag + d2 * sinagm;
-        R.at(l).row((2 * l + 1) * (-mp + l) + m + l) = d1 * sinag + d2 * sinagm;
-        R.at(l).row((2 * l + 1) * (-mp + l) - m + l) = d1 * cosag - d2 * cosagm;
+        RT.at(l).row((2 * l + 1) * (mp + l) + m + l) = d1 * cosag + d2 * cosagm;
+        RT.at(l).row((2 * l + 1) * (mp + l) - m + l) =
+            -d1 * sinag + d2 * sinagm;
+        RT.at(l).row((2 * l + 1) * (-mp + l) + m + l) =
+            d1 * sinag + d2 * sinagm;
+        RT.at(l).row((2 * l + 1) * (-mp + l) - m + l) =
+            d1 * cosag - d2 * cosagm;
         aux = cosmga * c3 - sinmga * s3;
         sinmga = sinmga * c3 + cosmga * s3;
         cosmga = aux;
@@ -209,30 +207,30 @@ protected:
     Scalar cosag, cosamg, sinag, sinamg;
 
     // Compute the initial matrices D0, R0, D1 and R1
-    D.at(0).row(0) << 1.0;
-    R.at(0).row(0) << 1.0;
-    D.at(1).row(8) << b001;
-    D.at(1).row(7) = -root_two * b010;
-    D.at(1).row(6) = b100;
-    D.at(1).row(5) = -D.at(1).row(7);
-    D.at(1).row(4) = D.at(1).row(8) - D.at(1).row(6);
-    D.at(1).row(3) = D.at(1).row(7);
-    D.at(1).row(2) = D.at(1).row(6);
-    D.at(1).row(1) = D.at(1).row(5);
-    D.at(1).row(0) = D.at(1).row(8);
+    DT.at(0).row(0) << 1.0;
+    RT.at(0).row(0) << 1.0;
+    DT.at(1).row(8) << b001;
+    DT.at(1).row(7) = -root_two * b010;
+    DT.at(1).row(6) = b100;
+    DT.at(1).row(5) = -DT.at(1).row(7);
+    DT.at(1).row(4) = DT.at(1).row(8) - DT.at(1).row(6);
+    DT.at(1).row(3) = DT.at(1).row(7);
+    DT.at(1).row(2) = DT.at(1).row(6);
+    DT.at(1).row(1) = DT.at(1).row(5);
+    DT.at(1).row(0) = DT.at(1).row(8);
     cosag = c1 * c3 - s1 * s3;
     cosamg = c1 * c3 + s1 * s3;
     sinag = s1 * c3 + c1 * s3;
     sinamg = s1 * c3 - c1 * s3;
-    R.at(1).row(4) = D.at(1).row(4);
-    R.at(1).row(7) = root_two * D.at(1).row(5) * c1;
-    R.at(1).row(1) = root_two * D.at(1).row(5) * s1;
-    R.at(1).row(5) = root_two * D.at(1).row(7) * c3;
-    R.at(1).row(3) = -root_two * D.at(1).row(7) * s3;
-    R.at(1).row(8) = D.at(1).row(8) * cosag - D.at(1).row(6) * cosamg;
-    R.at(1).row(6) = -D.at(1).row(8) * sinag - D.at(1).row(6) * sinamg;
-    R.at(1).row(2) = D.at(1).row(8) * sinag - D.at(1).row(6) * sinamg;
-    R.at(1).row(0) = D.at(1).row(8) * cosag + D.at(1).row(6) * cosamg;
+    RT.at(1).row(4) = DT.at(1).row(4);
+    RT.at(1).row(7) = root_two * DT.at(1).row(5) * c1;
+    RT.at(1).row(1) = root_two * DT.at(1).row(5) * s1;
+    RT.at(1).row(5) = root_two * DT.at(1).row(7) * c3;
+    RT.at(1).row(3) = -root_two * DT.at(1).row(7) * s3;
+    RT.at(1).row(8) = DT.at(1).row(8) * cosag - DT.at(1).row(6) * cosamg;
+    RT.at(1).row(6) = -DT.at(1).row(8) * sinag - DT.at(1).row(6) * sinamg;
+    RT.at(1).row(2) = DT.at(1).row(8) * sinag - DT.at(1).row(6) * sinamg;
+    RT.at(1).row(0) = DT.at(1).row(8) * cosag + DT.at(1).row(6) * cosamg;
 
     // The remaining matrices are calculated using
     // symmetry and and recurrence relations
@@ -245,32 +243,52 @@ protected:
 
 public:
   /*
-    Return the second moment matrix `Rz * S * Rz^T`.
+    Compute the first moment vector `R * s`.
 
   */
-  inline Matrix<Scalar, RowMajor> RzMom2(const Matrix<Scalar> &S) {
+  inline Matrix<Scalar, RowMajor> mom1(const RowVector<Scalar> &s) {
+    Matrix<Scalar, RowMajor> M(Ny, 2 * ydeg + 1);
+    M.setZero();
+    for (int l = 0; l < ydeg + 1; ++l) {
+      int i0 = l * l;
+      int ilen = 2 * l + 1;
+      for (int k = 0; k < ilen; ++k) {
+        M.block(i0, k, ilen, 1) = R.at(l).block(k * ilen, 0, ilen, ilen) *
+                                  s.segment(i0, ilen).transpose();
+      }
+    }
+
+    return M;
+  }
+
+  /*
+    Compute the second moment matrix `R * S * R^T`.
+
+  */
+  inline Matrix<Scalar, RowMajor> mom2(const Matrix<Scalar> &S) {
     Matrix<Scalar, RowMajor> M(Ny * Ny, 4 * ydeg + 1);
     M.setZero();
     for (int l1 = 0; l1 < ydeg + 1; ++l1) {
       int I = 2 * l1 + 1;
       int l1_2 = l1 * l1;
-      for (int l2 = 0; l2 < l1 + 1; ++l2) {
+      // TODO: Only compute lower triangle
+      for (int l2 = 0; l2 < ydeg + 1; ++l2) {
         int J = 2 * l2 + 1;
         int K = 2 * (l1 + l2) + 1;
         int l2_2 = l2 * l2;
 
         // R . S
         auto Sij = S.block(l1_2, l2_2, I, J);
-        Matrix<Scalar, RowMajor> tmp = (Rzi.at(l1) * Sij).transpose();
-        RowMatrixMap RziS(tmp.data(), J * I, I);
+        Matrix<Scalar, RowMajor> tmp = (R.at(l1) * Sij).transpose();
+        RowMatrixMap RS(tmp.data(), J * I, I);
 
         // (R . S) . R^T
         for (int ii = 0; ii < I; ++ii) {
           for (int jj = 0; jj < J; ++jj) {
             for (int kk = 0; kk < J; ++kk) {
               int ij = Ny * (l1_2 + ii) + l2_2 + jj;
-              M.row(ij).segment(0, K) += prod(RziS.col(ii).segment(I * kk, I),
-                                              Rzj[l2].row(J * jj + kk));
+              M.row(ij).segment(0, K) +=
+                  prod(RS.col(ii).segment(I * kk, I), RT[l2].row(J * jj + kk));
             }
           }
         }
@@ -280,15 +298,15 @@ public:
     return M;
   }
 
-  Wigner(int ydeg) : ydeg(ydeg), Ny((ydeg + 1) * (ydeg + 1)) {
+  explicit Wigner(int ydeg) : ydeg(ydeg), Ny((ydeg + 1) * (ydeg + 1)) {
 
     // Allocate the Wigner matrices
-    D.resize(ydeg + 1);
-    R.resize(ydeg + 1);
+    DT.resize(ydeg + 1);
+    RT.resize(ydeg + 1);
     for (int l = 0; l < ydeg + 1; ++l) {
       int sz = 2 * l + 1;
-      D.at(l).resize(sz * sz, sz);
-      R.at(l).resize(sz * sz, sz);
+      DT.at(l).resize(sz * sz, sz);
+      RT.at(l).resize(sz * sz, sz);
     }
 
     // Basis terms
@@ -306,21 +324,21 @@ public:
     tol = 10 * mach_eps<Scalar>();
     root_two = sqrt(Scalar(2.0));
 
-    // Pre-compute the lat/lon rotation matrices
-    rotar(0.0, 1.0, 0.0, -1.0);
-    Rzi.resize(ydeg + 1);
-    Rzj.resize(ydeg + 1);
+    // Pre-compute the (transpose) of the rotation matrix
+    if (Axis == 2)
+      rotar(1.0, 0.0, 1.0, 0.0); // Longitude transform
+    else if (Axis == 0)
+      rotar(0.0, 1.0, 0.0, -1.0); // Latitude transform
+    else
+      throw std::runtime_error("Invalid `Axis` in `Wigner`.");
+
+    // Now compute the un-transposed one
+    R.resize(ydeg + 1);
     for (int l = 0; l < ydeg + 1; ++l) {
-
+      Matrix<Scalar, RowMajor> tmp1 = RT.at(l).transpose();
       int I = 2 * l + 1;
-
-      // Left operator
-      Matrix<Scalar, RowMajor> tmp = R.at(l).transpose();
-      RowMatrixMap Rzil(tmp.data(), I * I, I);
-      Rzi.at(l) = Rzil;
-
-      // Right operator
-      Rzj.at(l) = R.at(l);
+      RowMatrixMap tmp2(tmp1.data(), I * I, I);
+      R.at(l) = tmp2.eval();
     }
   }
 };

@@ -178,7 +178,7 @@ class BuildExt(build_ext):
             opts.append("/Zm10")  # debug for C1060
         extra_args = ["-O%d" % optimize]
         if debug:
-            extra_args += ["-g", "-Wall", "-fno-lto"]
+            extra_args += ["-g", "-Wall", "-fno-lto", "-rdynamic"]
         else:
             if has_flag(self.compiler, "-fvisibility=hidden"):
                 opts.append("-fvisibility=hidden")

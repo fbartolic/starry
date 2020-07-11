@@ -23,6 +23,23 @@
 #include <unsupported/Eigen/CXX11/Tensor>
 #include <vector>
 
+//! Crash logs
+// See https://stackoverflow.com/a/77336
+#ifdef STARRY_DEBUG
+#include <execinfo.h>
+#include <signal.h>
+#include <stdio.h>
+#include <unistd.h>
+void error_handler(int sig) {
+  void *array[20];
+  size_t size;
+  size = backtrace(array, 20);
+  fprintf(stderr, "Error: signal %d:\n", sig);
+  backtrace_symbols_fd(array, size, STDERR_FILENO);
+  exit(1);
+}
+#endif
+
 //! Number of digits (16 = double)
 #ifndef STARRY_NDIGITS
 #define STARRY_NDIGITS 16
