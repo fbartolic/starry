@@ -11,7 +11,7 @@
 
 // Includes
 #include "basis.h"
-#include "gp/gp.h"
+#include "gp/latitude.h"
 #include "ops.h"
 #include "reflected/scatter.h"
 #include "sturm.h"
@@ -39,28 +39,6 @@ PYBIND11_MODULE(_c_ops, m) {
 
   // Declare the Ops class
   py::class_<starry::Ops<Scalar>> Ops(m, "Ops");
-
-  // DEBUG
-  // GP TEST
-  m.def("gp", [](const int ydeg) {
-
-    signal(SIGSEGV, error_handler);
-    signal(SIGABRT, error_handler);
-    signal(SIGILL, error_handler);
-    signal(SIGTERM, error_handler);
-
-    RowVector<Scalar> s(9);
-    s << 1, 2, 3, 4, 5, 6, 7, 8, 9;
-
-    starry::gp::integrals::Spot<Scalar> I0(ydeg);
-    starry::gp::integrals::Longitude<Scalar> I1(ydeg);
-    starry::gp::integrals::Latitude<Scalar> I2(ydeg);
-
-    I1.set_vector(s);
-
-    std::cout << I1.mom1() << std::endl;
-
-  });
 
   // Constructor
   Ops.def(py::init<int, int, int, Scalar, Scalar>());
@@ -465,4 +443,25 @@ PYBIND11_MODULE(_c_ops, m) {
                                                static_cast<Scalar>(a),
                                                static_cast<Scalar>(b));
         });
+
+  // * - * - * - *
+
+  // Declare the LatitudeGP class
+  py::class_<starry::gp::LatitudeGP<Scalar>> LatitudeGP(m, "LatitudeGP");
+
+  // Constructor
+  LatitudeGP.def(py::init<int>());
+
+  // Compute the q and Q integrals
+  LatitudeGP.def("compute",
+                 [](starry::gp::LatitudeGP<Scalar> &gp, const Scalar &alpha,
+                    const Scalar &beta) { gp.compute(alpha, beta); });
+
+  // q
+  LatitudeGP.def_property_readonly(
+      "q", [](starry::gp::LatitudeGP<Scalar> &gp) { return gp.q; });
+
+  // Q
+  LatitudeGP.def_property_readonly(
+      "Q", [](starry::gp::LatitudeGP<Scalar> &gp) { return gp.Q; });
 }
