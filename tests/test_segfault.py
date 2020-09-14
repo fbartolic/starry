@@ -8,13 +8,18 @@ tt.config.floatX = "float64"
 sizes = [10, 100, 1000, 10000, 100000]
 
 
-@pytest.mark.parametrize("M", sizes)
-def test_dot_product(M, N=300, L=1):
-    def dot_product():
-        U = tt.ones((M, N))
-        V = tt.ones((N, L))
-        dot = tt.dot(U, V)
-        return tt.sum(dot) / (M * N * L)
+def dot_sum(x, y):
+    dot = tt.dot(x, y)
+    return tt.sum(dot)
 
-    func = theano.function([], dot_product())
-    print(func())
+
+x = tt.dmatrix()
+y = tt.dmatrix()
+func = theano.function([x, y], dot_sum(x, y))
+
+
+@pytest.mark.parametrize("M", sizes)
+def test_dot_product(M, N=300, L=10):
+    u = np.random.randn(M, N)
+    v = np.random.randn(N, L)
+    print(func(u, v))
