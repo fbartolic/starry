@@ -23,7 +23,7 @@ jobs:
       theano-cache purge
       pip install -U pip
       pip install -U setuptools
-      pip install -U pytest nose parametrize
+      pip install -U pytest nose
     displayName: 'Install dependencies'
 
   - script: |
