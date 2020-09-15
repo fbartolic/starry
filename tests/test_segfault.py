@@ -3,23 +3,27 @@ import theano
 import theano.tensor as tt
 import theano.sparse as ts
 import pytest
+import itertools
 
-tt.config.floatX = "float64"
-sizes = [10, 100, 1000, 10000, 100000]
-
-
-def dot_sum(x, y):
-    dot = tt.dot(x, y)
-    return tt.sum(dot)
+floatX = ["float32", "float64"]
+sizes = [10, 100, 1000, 10000, 100000, 1000000]
 
 
-x = tt.dmatrix()
-y = tt.dmatrix()
-func = theano.function([x, y], dot_sum(x, y))
+@pytest.mark.parametrize("floatX,M", itertools.product(floatX, sizes))
+def test_dot_product(floatX, M, N=300, L=10):
 
+    # The theano function we'll compile
+    def dot_sum(x, y):
+        dot = tt.dot(x, y)
+        return tt.sum(dot)
 
-@pytest.mark.parametrize("M", sizes)
-def test_dot_product(M, N=300, L=10):
-    u = np.random.randn(M, N)
-    v = np.random.randn(N, L)
+    # Compile it
+    x = tt.matrix(dtype=floatX)
+    y = tt.matrix(dtype=floatX)
+    func = theano.function([x, y], dot_sum(x, y))
+
+    # Evaluate it
+    np.random.seed(0)
+    u = np.array(np.random.randn(M, N), dtype=floatX)
+    v = np.array(np.random.randn(N, L), dtype=floatX)
     print(func(u, v))
