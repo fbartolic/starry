@@ -6,7 +6,8 @@ import pytest
 import itertools
 
 theano.config.gcc.cxxflags = "-DDEBUG"
-config.cmodule.remove_gxx_opt = True
+theano.config.cmodule.remove_gxx_opt = True
+theano.config.blas.ldflags = ""
 
 floatX = ["float32", "float64"]
 sizes = [10, 100, 1000, 10000, 100000, 1000000]
