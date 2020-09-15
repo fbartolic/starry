@@ -2,7 +2,7 @@ jobs:
 - job: Default
   timeoutInMinutes: 90
   pool:
-    vmImage: macOS-latest
+    vmImage: Ubuntu-16.04
   steps:
 
   - script: |
@@ -19,7 +19,7 @@ jobs:
   - script: |
       . $CONDA/etc/profile.d/conda.sh
       conda activate debug
-      conda install -y -q numpy scipy mkl openblas theano
+      conda install -y -q numpy scipy mkl=2020.1 openblas=0.3.6 theano=1.0.5
       theano-cache purge
       pip install -U pip
       pip install -U setuptools
