@@ -2,7 +2,7 @@ jobs:
 - job: Default
   timeoutInMinutes: 90
   pool:
-    vmImage: ubuntu-18.04
+    vmImage: macOS-latest
   steps:
 
   - script: |
