@@ -1,0 +1,1060 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>todos &mdash; starry latest documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="_static/js/hacks.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Coverage reports" href="coverage.html" />
+    <link rel="prev" title="Developer" href="developer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> starry
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html"> Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html"> New in version 1.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"> Examples &amp; tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html"> API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html"> Extensions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="developer.html"> Developer</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ToDo list</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://dev.azure.com/rodluger/starry/_build">Azure pipelines page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coverage.html">Coverage reports</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/rodluger/starry"> Github</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/rodluger/starry/issues"> Submit an issue</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ui.adsabs.harvard.edu/public-libraries/b0KqtPtYRj6I7T8eAZc5Ig"> Papers</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">starry</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="developer.html">Developer</a> &raquo;</li>
+        
+      <li>todos</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="todos">
+<h1>todos<a class="headerlink" href="#todos" title="Permalink to this headline">¶</a></h1>
+<p>There are <strong>33</strong> todo items that need to be addressed in <code class="docutils literal notranslate"><span class="pre">starry</span></code>.</p>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/kepler.py#L1181">kepler.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1177
+1178
+1179
+1180
+1181
+1182
+1183
+1184
+1185
+1186
+1187
+1188</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        .. note::
+            Users may call the :py:meth:`draw` method of this class to draw
+            from the posterior after calling :py:meth:`solve`.
+        &quot;&quot;&quot;
+<span class="hll">        # TODO: Implement for spectral maps?
+</span>        self._no_spectral()
+
+        # Check that the data is set
+        if self._flux is None or self._C is None:
+            raise ValueError(&quot;Please provide a dataset with `set_data()`.&quot;)
+
+        # Get the full design matrix
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/kepler.py#L1343">kepler.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1339
+1340
+1341
+1342
+1343
+1344
+1345
+1346
+1347
+1348
+1349</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="n">Returns</span><span class="p">:</span>
+            <span class="n">lnlike</span><span class="p">:</span> <span class="n">The</span> <span class="n">log</span> <span class="n">marginal</span> <span class="n">likelihood</span><span class="o">.</span>
+        <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        # TODO: Implement for spectral maps?</span>
+<span class="hll"><span class="s2">        self._no_spectral()</span>
+</span>
+<span class="s2">        # Check that the data is set</span>
+<span class="s2">        if self._flux is None or self._C is None:</span>
+<span class="s2">            raise ValueError(&quot;Please provide a dataset with `set_data()`.&quot;)</span>
+
+<span class="s2">        # Get the full design matrix</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/maps.py#L1802">maps.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1798
+1799
+1800
+1801
+1802
+1803
+1804
+1805
+1806
+1807
+1808</pre></div></td><td class="code"><div class="highlight"><pre><span></span>            <span class="c1"># Require at least one point to be at a different latitude</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">-</span> <span class="n">lat</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span> <span class="o">&gt;</span> <span class="mf">1e-4</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+                <span class="c1"># TODO: untested!</span>
+<span class="hll">                <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span>
+</span>                <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span>
+
+            <span class="c1"># Construct the design matrix that gives us</span>
+            <span class="c1"># the coefficients of the polynomial fit</span>
+            <span class="c1"># centered on the current point</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/maps.py#L2693">maps.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>2689
+2690
+2691
+2692
+2693
+2694
+2695
+2696
+2697
+2698
+2699
+2700</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="n">source_npts</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">lazy</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">lazy</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">lazy</span>
+
+<span class="hll">    <span class="c1"># TODO: phase this next warning out</span>
+</span>    <span class="k">if</span> <span class="n">source_npts</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">&quot;Finite source size is still an experimental feature. &quot;</span>
+            <span class="s2">&quot;Use it with care.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Limb-darkened?</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/maps.py#L2703">maps.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>2699
+2700
+2701
+2702
+2703
+2704
+2705
+2706
+2707
+2708
+2709</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="c1"># Limb-darkened?</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ydeg</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">rv</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">reflected</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">):</span>
+
+        <span class="c1"># TODO: Add support for wavelength-dependent limb darkening</span>
+<span class="hll">        <span class="k">if</span> <span class="n">nw</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span>            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+                <span class="s2">&quot;Multi-wavelength limb-darkened maps are not yet supported.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">Bases</span> <span class="o">=</span> <span class="p">(</span><span class="n">LimbDarkenedBase</span><span class="p">,</span> <span class="n">MapBase</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/core.py#L92">core.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="bp">self</span><span class="o">.</span><span class="n">_tensordotDz</span> <span class="o">=</span> <span class="n">tensordotDzOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_ops</span><span class="o">.</span><span class="n">tensordotDz</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dotR</span> <span class="o">=</span> <span class="n">dotROp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_ops</span><span class="o">.</span><span class="n">dotR</span><span class="p">)</span>
+
+        <span class="c1"># Filter</span>
+<span class="hll">        <span class="c1"># TODO: Make the filter operator sparse</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_F</span> <span class="o">=</span> <span class="n">FOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_ops</span><span class="o">.</span><span class="n">F</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c_ops</span><span class="o">.</span><span class="n">N</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c_ops</span><span class="o">.</span><span class="n">Ny</span><span class="p">)</span>
+
+        <span class="c1"># Misc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_spotYlm</span> <span class="o">=</span> <span class="n">spotYlmOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_ops</span><span class="o">.</span><span class="n">spotYlm</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ydeg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nw</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pT</span> <span class="o">=</span> <span class="n">pTOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_ops</span><span class="o">.</span><span class="n">pT</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">nw</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reflected</span><span class="p">:</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/core.py#L112">core.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118</pre></div></td><td class="code"><div class="highlight"><pre><span></span>                <span class="bp">self</span><span class="o">.</span><span class="n">_minimize</span> <span class="o">=</span> <span class="n">minimizeOp</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">intensity</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">P</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ydeg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">udeg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fdeg</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+<span class="hll">            <span class="c1"># TODO: Implement minimization for spectral maps?</span>
+</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_minimize</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_LimbDarkIsPhysical</span> <span class="o">=</span> <span class="n">LDPhysicalOp</span><span class="p">(</span><span class="n">_c_ops</span><span class="o">.</span><span class="n">nroots</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">rT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rT</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/core.py#L515">core.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ydeg</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">M</span>
+
+        <span class="c1"># Rotate to the sky frame</span>
+<span class="hll">        <span class="c1"># TODO: Do this in a single compound rotation</span>
+</span>        <span class="n">M</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dotR</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dotR</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dotR</span><span class="p">(</span>
+                    <span class="n">M</span><span class="p">,</span>
+                    <span class="o">-</span><span class="n">tt</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">obl</span><span class="p">),</span>
+                    <span class="o">-</span><span class="n">tt</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">obl</span><span class="p">),</span>
+                    <span class="n">math</span><span class="o">.</span><span class="n">to_tensor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">),</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/core.py#L618">core.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625</pre></div></td><td class="code"><div class="highlight"><pre><span></span>                <span class="p">),</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Rotate to the sky frame</span>
+<span class="hll">        <span class="c1"># TODO: Do this in a single compound rotation</span>
+</span>        <span class="n">MT</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dotR</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dotR</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dotR</span><span class="p">(</span>
+                    <span class="n">MT</span><span class="p">,</span>
+                    <span class="n">math</span><span class="o">.</span><span class="n">to_tensor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">),</span>
+                    <span class="n">math</span><span class="o">.</span><span class="n">to_tensor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">),</span>
+                    <span class="n">math</span><span class="o">.</span><span class="n">to_tensor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">),</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/core.py#L2117">core.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>2113
+2114
+2115
+2116
+2117
+2118
+2119
+2120
+2121
+2122
+2123
+2124</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="n">sec_veq</span><span class="p">,</span>
+        <span class="n">keplerian</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compute the observed system radial velocity (RV maps only).&quot;&quot;&quot;</span>
+<span class="hll">        <span class="c1"># TODO: This method is currently very inefficient, as it</span>
+</span>        <span class="c1"># calls `X` twice per call and instantiates an `orbit`</span>
+        <span class="c1"># instance up to three separate times per call. We should</span>
+        <span class="c1"># re-code the logic from `X()` in here to optimize it.</span>
+
+        <span class="c1"># Compute the RV filter</span>
+        <span class="n">pri_f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">primary</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">compute_rv_filter</span><span class="p">(</span>
+            <span class="n">pri_inc</span><span class="p">,</span> <span class="n">pri_obl</span><span class="p">,</span> <span class="n">pri_veq</span><span class="p">,</span> <span class="n">pri_alpha</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/math.py#L232">math.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239</pre></div></td><td class="code"><div class="highlight"><pre><span></span>            <span class="n">MAP</span> <span class="n">solution</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">Cholesky</span> <span class="n">factorization</span> <span class="n">of</span> <span class="n">the</span> <span class="n">corresponding</span>
+            <span class="n">covariance</span> <span class="n">matrix</span><span class="o">.</span>
+
+        <span class="s2">&quot;&quot;&quot;</span>
+<span class="hll"><span class="s2">        # TODO: These if statements won&#39;t play well with @autocompile!!!</span>
+</span>
+<span class="s2">        # Compute C^-1 . X</span>
+<span class="s2">        if cho_C.ndim == 0:</span>
+<span class="s2">            CInvX = X / cho_C ** 2</span>
+<span class="s2">        elif cho_C.ndim == 1:</span>
+<span class="s2">            CInvX = tt.dot(tt.diag(1 / cho_C ** 2), X)</span>
+<span class="s2">        else:</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/math.py#L287">math.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294</pre></div></td><td class="code"><div class="highlight"><pre><span></span>            all possible spherical harmonic vectors, which is analytically
+            computable for the linear `starry` model.
+
+        &quot;&quot;&quot;
+<span class="hll">        # TODO: These if statements won&#39;t play well with @autocompile!!!
+</span>
+        # Compute the GP mean
+        gp_mu = tt.dot(X, mu)
+
+        # Compute the GP covariance
+        if L.ndim == 0:
+            XLX = tt.dot(X, tt.transpose(X)) * L
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/math.py#L340">math.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346</pre></div></td><td class="code"><div class="highlight"><pre><span></span>            all possible spherical harmonic vectors, which is analytically
+            computable for the linear `starry` model.
+
+        &quot;&quot;&quot;
+<span class="hll">        # TODO: These if statements won&#39;t play well with @autocompile!!!
+</span>
+        # Compute the GP mean
+        gp_mu = tt.dot(X, mu)
+
+        # Residual vector
+        r = tt.reshape(flux - gp_mu, (-1, 1))
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/utils.py#L57">utils.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        - an integer (`int`, `np.int`, `np.int16`, `np.int32`, `np.int64`)
+        - a numpy boolean (`np.array(True)`, `np.array(False)`)
+        - a numpy float array with ndim equal to 0, 1, 2, or 3
+
+<span class="hll">    # TODO: Cast lists to arrays and floats to np.array(float)
+</span>
+    &quot;&quot;&quot;
+    ttype = type(arg)
+    if is_theano(arg):
+        return ttype
+    else:
+        if ttype in integers:
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/polybasis.py#L69">polybasis.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>65
+66
+67
+68
+69
+70
+71
+72
+73
+74</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">perform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">bpT</span> <span class="o">=</span> <span class="n">inputs</span>
+
+        <span class="c1"># TODO: When any of the coords are zero, there&#39;s a div</span>
+<span class="hll">        <span class="c1"># by zero below. This hack fixes the issue. We should</span>
+</span>        <span class="c1"># think of a better way of doing this!</span>
+        <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-8</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">]</span> <span class="o">=</span> <span class="n">tol</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">]</span> <span class="o">=</span> <span class="n">tol</span>
+        <span class="n">z</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">]</span> <span class="o">=</span> <span class="n">tol</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/basis.h#L48">basis.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">Compute the `P(z)` part of the Ylm vectors.</span>
+
+<span class="cm">TODO: This can be sped up with sparse algebra.</span>
+<span class="hll">
+</span><span class="cm">*/</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Scalar</span><span class="o">&gt;</span>
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">legendre</span><span class="p">(</span><span class="kt">int</span> <span class="n">lmax</span><span class="p">,</span>
+                     <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Triplet</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="o">&gt;&gt;&gt;</span> <span class="o">&amp;</span><span class="n">M</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Compute densely</span>
+  <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="n">lmax</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">lmax</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/basis.h#L582">basis.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="k">explicit</span> <span class="nf">Basis</span><span class="p">(</span><span class="kt">int</span> <span class="n">ydeg</span><span class="p">,</span> <span class="kt">int</span> <span class="n">udeg</span><span class="p">,</span> <span class="kt">int</span> <span class="n">fdeg</span><span class="p">,</span> <span class="n">T</span> <span class="n">norm</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="n">root_pi</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">())</span>
+      <span class="o">:</span> <span class="n">ydeg</span><span class="p">(</span><span class="n">ydeg</span><span class="p">),</span> <span class="n">udeg</span><span class="p">(</span><span class="n">udeg</span><span class="p">),</span> <span class="n">fdeg</span><span class="p">(</span><span class="n">fdeg</span><span class="p">),</span> <span class="n">deg</span><span class="p">(</span><span class="n">ydeg</span> <span class="o">+</span> <span class="n">udeg</span> <span class="o">+</span> <span class="n">fdeg</span><span class="p">),</span> <span class="n">norm</span><span class="p">(</span><span class="n">norm</span><span class="p">),</span>
+        <span class="n">x_cache</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">y_cache</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">z_cache</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">deg_cache</span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="hll">    <span class="c1">// TODO: This class needs to be re-written. We&#39;re computing the same</span>
+</span>    <span class="c1">// things over and over again just to get different shapes...</span>
+
+    <span class="c1">// Compute the augmented matrices</span>
+    <span class="n">Eigen</span><span class="o">::</span><span class="n">SparseMatrix</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">A1Inv_</span><span class="p">,</span> <span class="n">A2_</span><span class="p">,</span> <span class="n">A_</span><span class="p">,</span> <span class="n">U1_</span><span class="p">;</span>
+    <span class="n">RowVector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">rT_</span><span class="p">,</span> <span class="n">rTA1_</span><span class="p">;</span>
+    <span class="n">computeA1</span><span class="p">(</span><span class="n">deg</span><span class="p">,</span> <span class="n">A1_big</span><span class="p">,</span> <span class="n">norm</span><span class="p">);</span>
+    <span class="n">computeA1Inv</span><span class="p">(</span><span class="n">deg</span><span class="p">,</span> <span class="n">A1_big</span><span class="p">,</span> <span class="n">A1Inv_</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/filter.h#L250">filter.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="o">&gt;</span> <span class="n">pf</span><span class="p">;</span>
+    <span class="n">pf</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">A1_f</span> <span class="o">*</span> <span class="n">f</span><span class="p">;</span>
+
+    <span class="c1">// Multiply them</span>
+<span class="hll">    <span class="c1">// TODO: DpDpf and DpDpu are sparse, and we should probably exploit that</span>
+</span>    <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">udeg</span> <span class="o">&gt;</span> <span class="n">fdeg</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">computePolynomialProduct</span><span class="p">(</span><span class="n">udeg</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">fdeg</span><span class="p">,</span> <span class="n">pf</span><span class="p">,</span> <span class="n">DpDpu</span><span class="p">,</span> <span class="n">DpDpf</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">computePolynomialProduct</span><span class="p">(</span><span class="n">fdeg</span><span class="p">,</span> <span class="n">pf</span><span class="p">,</span> <span class="n">udeg</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">DpDpf</span><span class="p">,</span> <span class="n">DpDpu</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/limbdark.h#L5">limbdark.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>\file limbdark.h
+\brief Limb darkening utilities from Agol, Luger &amp; Foreman-Mackey (2019).
+
+<span class="hll">TODO: Loop downward in `v` until `J[v] != 0`
+</span>TODO: Test all special cases
+
+*/
+
+#ifndef _STARRY_LIMBDARK_H_
+#define _STARRY_LIMBDARK_H_
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/limbdark.h#L6">limbdark.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span>\file limbdark.h
+\brief Limb darkening utilities from Agol, Luger &amp; Foreman-Mackey (2019).
+
+TODO: Loop downward in `v` until `J[v] != 0`
+<span class="hll">TODO: Test all special cases
+</span>
+*/
+
+#ifndef _STARRY_LIMBDARK_H_
+#define _STARRY_LIMBDARK_H_
+
+#include &quot;ellip.h&quot;
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/misc.h#L99">misc.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106</pre></div></td><td class="code"><div class="highlight"><pre><span></span>                    <span class="n">RowVector</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">bamp</span><span class="p">,</span> <span class="n">Scalar</span> <span class="o">&amp;</span><span class="n">bsigma</span><span class="p">,</span> <span class="n">Scalar</span> <span class="o">&amp;</span><span class="n">blat</span><span class="p">,</span>
+                    <span class="n">Scalar</span> <span class="o">&amp;</span><span class="n">blon</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">// Forward diff for sigma</span>
+<span class="hll">  <span class="c1">// TODO: Compute the backprop expression</span>
+</span>  <span class="k">using</span> <span class="n">ADType</span> <span class="o">=</span> <span class="n">ADScalar</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="p">,</span> <span class="mi">1</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="n">ADType</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">sigma_</span><span class="p">;</span>
+  <span class="n">sigma</span><span class="p">.</span><span class="n">derivatives</span><span class="p">()</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Scalar</span><span class="o">&gt;::</span><span class="n">Unit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="c1">// Compute the integrals recursively</span>
+  <span class="n">Vector</span><span class="o">&lt;</span><span class="n">ADType</span><span class="o">&gt;</span> <span class="n">IP</span><span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="n">Vector</span><span class="o">&lt;</span><span class="n">ADType</span><span class="o">&gt;</span> <span class="n">ID</span><span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/wigner.h#L417">wigner.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424</pre></div></td><td class="code"><div class="highlight"><pre><span></span>          <span class="n">tol_ad</span><span class="p">,</span> <span class="n">D_ad</span><span class="p">,</span> <span class="n">R_ad</span><span class="p">);</span>
+
+    <span class="c1">// Extract the matrices and their derivatives</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">ydeg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">      <span class="c1">// TODO: This data copy is *very* slow; is there a better way?</span>
+</span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">R</span><span class="p">[</span><span class="n">l</span><span class="p">](</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">R_ad</span><span class="p">[</span><span class="n">l</span><span class="p">](</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+          <span class="n">DRDx</span><span class="p">[</span><span class="n">l</span><span class="p">](</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">R_ad</span><span class="p">[</span><span class="n">l</span><span class="p">](</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">).</span><span class="n">derivatives</span><span class="p">()(</span><span class="mi">0</span><span class="p">);</span>
+          <span class="n">DRDy</span><span class="p">[</span><span class="n">l</span><span class="p">](</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">R_ad</span><span class="p">[</span><span class="n">l</span><span class="p">](</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">).</span><span class="n">derivatives</span><span class="p">()(</span><span class="mi">1</span><span class="p">);</span>
+          <span class="n">DRDz</span><span class="p">[</span><span class="n">l</span><span class="p">](</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">R_ad</span><span class="p">[</span><span class="n">l</span><span class="p">](</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">).</span><span class="n">derivatives</span><span class="p">()(</span><span class="mi">2</span><span class="p">);</span>
+          <span class="n">DRDtheta</span><span class="p">[</span><span class="n">l</span><span class="p">](</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">R_ad</span><span class="p">[</span><span class="n">l</span><span class="p">](</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">).</span><span class="n">derivatives</span><span class="p">()(</span><span class="mi">3</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/wigner.h#L531">wigner.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="p">(</span><span class="n">unlikely</span><span class="p">(</span><span class="n">npts</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+      <span class="k">return</span><span class="p">;</span>
+
+    <span class="c1">// Dot them in</span>
+<span class="hll">    <span class="c1">// TODO: There must be a more efficient way of doing this.</span>
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">ydeg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// d / dargs</span>
+      <span class="n">dotR_bx</span> <span class="o">+=</span> <span class="p">(</span><span class="n">M</span><span class="p">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span> <span class="o">*</span> <span class="n">l</span><span class="p">,</span> <span class="n">npts</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">DRDx</span><span class="p">[</span><span class="n">l</span><span class="p">])</span>
+                     <span class="p">.</span><span class="n">cwiseProduct</span><span class="p">(</span><span class="n">bMR</span><span class="p">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span> <span class="o">*</span> <span class="n">l</span><span class="p">,</span> <span class="n">npts</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+                     <span class="p">.</span><span class="n">sum</span><span class="p">();</span>
+      <span class="n">dotR_by</span> <span class="o">+=</span> <span class="p">(</span><span class="n">M</span><span class="p">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span> <span class="o">*</span> <span class="n">l</span><span class="p">,</span> <span class="n">npts</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">DRDy</span><span class="p">[</span><span class="n">l</span><span class="p">])</span>
+                     <span class="p">.</span><span class="n">cwiseProduct</span><span class="p">(</span><span class="n">bMR</span><span class="p">.</span><span class="n">block</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span> <span class="o">*</span> <span class="n">l</span><span class="p">,</span> <span class="n">npts</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/reflected/geometry.h#L759">geometry.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="n">xi</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+    <span class="n">lam</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1">// We need to do this case-by-case</span>
+<span class="hll">    <span class="c1">// TODO: This section is really messy / cumbersome. Clean it up.</span>
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="k">if</span> <span class="p">((</span><span class="mi">-1</span> <span class="o">-</span> <span class="n">xo</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">-1</span> <span class="o">-</span> <span class="n">xo</span><span class="p">)</span> <span class="o">+</span> <span class="n">yo</span> <span class="o">*</span> <span class="n">yo</span> <span class="o">&lt;</span> <span class="n">ro</span> <span class="o">*</span> <span class="n">ro</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">Vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">tmp</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+        <span class="n">tmp</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/reflected/primitive.h#L137">primitive.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">    Compute the helper integral I by upward and/or downward recursion.</span>
+
+<span class="cm">    TODO: This code currently can&#39;t handle cases where the (lo, hi)</span>
+<span class="hll"><span class="cm">          limit pairs in the kappa vector belong to different regimes.</span>
+</span><span class="cm">          These regimes are</span>
+
+<span class="cm">                sin(kappa / 2) &gt; 0.5 --&gt; upward recursion</span>
+<span class="cm">                sin(kappa / 2) &lt;= 0.5 --&gt; downward recursion</span>
+
+<span class="cm">          Cases where the two angles are close to 0.5 are *fine*. Issues</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/reflected/primitive.h#L234">primitive.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">inline</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">W_indef</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">nmax</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">s2_</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">q2</span><span class="p">,</span>
+                         <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">q3</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">(</span><span class="n">nmax</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="hll">  <span class="c1">// TODO: Is this instability encountered in practice?</span>
+</span>  <span class="c1">// If so, find the limiting value of W when s2 = 0.</span>
+  <span class="n">T</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">s2_</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">STARRY_MIN_SIN_ALPHA</span><span class="p">)</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="p">(</span><span class="n">s2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="n">T</span><span class="p">(</span><span class="n">STARRY_MIN_SIN_ALPHA</span><span class="p">)</span> <span class="o">:</span> <span class="n">T</span><span class="p">(</span><span class="o">-</span><span class="n">STARRY_MIN_SIN_ALPHA</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">q2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">)</span> <span class="p">{</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/reflected/primitive.h#L358">primitive.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="n">c</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">-=</span> <span class="n">b</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">f0</span><span class="p">;</span>
+  <span class="n">c</span><span class="p">(</span><span class="n">nmax</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-=</span> <span class="n">fN</span><span class="p">;</span>
+
+  <span class="c1">// Construct the tridiagonal matrix</span>
+<span class="hll">  <span class="c1">// TODO: We should probably use a sparse solve here!</span>
+</span>  <span class="n">Matrix</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">(</span><span class="n">nmax</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nmax</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="n">A</span><span class="p">.</span><span class="n">setZero</span><span class="p">();</span>
+  <span class="n">A</span><span class="p">.</span><span class="n">diagonal</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+  <span class="n">A</span><span class="p">.</span><span class="n">diagonal</span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">segment</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nmax</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="n">A</span><span class="p">.</span><span class="n">diagonal</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">setOnes</span><span class="p">();</span>
+
+  <span class="c1">// Solve</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/reflected/primitive.h#L572">primitive.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="n">sgn</span> <span class="o">*=</span> <span class="mi">-1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Special limit: sin(theta) = 0</span>
+<span class="hll">  <span class="c1">// TODO: eliminate the calls to pow in favor of recursion</span>
+</span>  <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">st</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">STARRY_T_TOL</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kt">int</span> <span class="n">sgnct</span> <span class="o">=</span> <span class="n">ct</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">ct</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">-1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">ydeg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="o">-</span><span class="n">l</span><span class="p">;</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">m</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">l</span> <span class="o">-</span> <span class="n">m</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/starry/_core/ops/lib/include/reflected/primitive.h#L604">primitive.h</a>:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="p">}</span>
+
+  <span class="c1">// Special limit: cos(theta) = 0</span>
+  <span class="c1">// TODO: eliminate the calls to pow in favor of recursion</span>
+<span class="hll">  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">STARRY_T_TOL</span><span class="p">)</span> <span class="p">{</span>
+</span>
+    <span class="kt">int</span> <span class="n">sgnst</span> <span class="o">=</span> <span class="n">st</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">st</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">-1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">ydeg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="o">-</span><span class="n">l</span><span class="p">;</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">m</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">l</span> <span class="o">-</span> <span class="n">m</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/tests/greedy/test_exceptions_greedy.py#L36">test_exceptions_greedy.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="c1"># Bad `m`</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">map</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="c1"># TODO: It would be nice if `map[1, 3] = ...` raised</span>
+<span class="hll">    <span class="c1"># an error, but currently it does nothing (silently).</span>
+</span>
+    <span class="c1"># Bad type</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="nb">map</span><span class="p">[</span><span class="mf">2.3</span><span class="p">,</span> <span class="mf">5.7</span><span class="p">]</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">map</span><span class="p">[</span><span class="mf">2.3</span><span class="p">,</span> <span class="mf">5.7</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/tests/greedy/test_light_delay_greedy.py#L13">test_light_delay_greedy.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="n">sec</span> <span class="o">=</span> <span class="n">starry</span><span class="o">.</span><span class="n">Secondary</span><span class="p">(</span><span class="n">starry</span><span class="o">.</span><span class="n">Map</span><span class="p">(),</span> <span class="n">porb</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">sys</span> <span class="o">=</span> <span class="n">starry</span><span class="o">.</span><span class="n">System</span><span class="p">(</span><span class="n">pri</span><span class="p">,</span> <span class="n">sec</span><span class="p">,</span> <span class="n">light_delay</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">sys</span><span class="o">.</span><span class="n">light_delay</span> <span class="ow">is</span> <span class="kc">True</span>
+
+<span class="hll">    <span class="c1"># TODO: Add tests here.</span>
+</span></pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/tests/greedy/test_system_greedy.py#L87">test_system_greedy.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>83
+84
+85
+86
+87</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="n">sys</span> <span class="o">=</span> <span class="n">starry</span><span class="o">.</span><span class="n">System</span><span class="p">(</span><span class="n">pri</span><span class="p">,</span> <span class="n">sec</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mi">50</span><span class="p">)))</span>
+    <span class="n">flux</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">flux</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="hll">    <span class="c1"># TODO: Add an analytic validation here</span>
+</span></pre></div>
+</td></tr></table></div>
+<p><a class="reference external" href="https://github.com/rodluger/starry/blob/d50576caf964ad925c490c9f3ffe1273ab155397/tests/lazy/test_op_gradients.py#L219">test_op_gradients.py</a>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="p">)</span>
+
+
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="hll"><span class="s2"># TODO: Implement the gradient of the OrenNayarOp.</span>
+</span><span class="s2">def test_intensity_reflected(abs_tol=1e-5, rel_tol=1e-5, eps=1e-7):</span>
+<span class="s2">    with change_flags(compute_test_value=&quot;off&quot;):</span>
+<span class="s2">        map = starry.Map(ydeg=2, udeg=2, reflected=True)</span>
+<span class="s2">        np.random.seed(11)</span>
+<span class="s2">        lat = 180 * (np.random.random(10) - 0.5)</span>
+<span class="s2">        lon = 360 * (np.random.random(10) - 0.5)</span>
+<span class="s2">        y = [1.0] + list(np.random.randn(8))</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+  <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+    
+    <a href="coverage.html" class="btn btn-neutral float-right" title="Coverage reports" accesskey="n"
+      rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+    
+    
+    <a href="developer.html" class="btn btn-neutral float-left" title="Developer" accesskey="p"
+      rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+    
+  </div>
+  
+
+  <hr />
+
+  <div role="contentinfo">
+    <p>
+      
+      &copy; Copyright 2019, Rodrigo Luger.
+      <span class="lastupdated">
+        Last updated on 2021 Jan 13 at 17:26:50 UTC.
+      </span>
+
+    </p>
+  </div>
+  
+  
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a
+    href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by
+  <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
